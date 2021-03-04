@@ -1,0 +1,8 @@
+X=pd.get_dummies(df.drop(["ParentschoolSatisfaction","Class","Class_value"],axis=1),columns=['gender', 'NationalITy', 'PlaceofBirth', 'StageID', 'GradeID','SectionID', 'Topic', 
+                                                                                         'Semester', 'Relation','ParentAnsweringSurvey','StudentAbsenceDays'],drop_first=True)
+Y=df["Class"]
+
+from sklearn.model_selection import train_test_split
+
+x_train,x_test,y_train,y_test=train_test_split(X,Y,test_size=0.3,random_state=1)
+
