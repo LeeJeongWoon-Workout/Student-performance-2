@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+!kaggle datasets download -d aljarah/xAPI-Edu-Data
+!unzip "*.zip"
+!ls
+
+df=pd.read_csv("xAPI-Edu-Data.csv")
+
+sns.pairplot(data=df,hue="Class")
+
+
