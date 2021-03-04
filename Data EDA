@@ -1,0 +1,12 @@
+sns.countplot(x="gender",data=df,hue="Class",hue_order=["L","M","H"])
+
+sns.countplot(x="ParentAnsweringSurvey",data=df,hue="Class",hue_order=["L","M","H"])
+plt.xticks(rotation=90)
+plt.show()
+
+df["Class_value"]=df["Class"].map(dict(L=-1,M=0,H=1))
+
+gb=df.groupby("NationalITy").mean()["Class_value"]
+plt.bar(gb.index,gb)
+plt.xticks(rotation=90)
+
